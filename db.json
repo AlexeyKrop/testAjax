@@ -1,0 +1,24 @@
+{
+  "animals": [
+    {
+      "id": 1,
+      "view": "Млекопитающие",
+      "picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Grosser_Panda.JPG/1280px-Grosser_Panda.JPG"
+    },
+    {
+      "id": 2,
+      "view": "Птицы",
+      "picture": "https://upload.wikimedia.org/wikipedia/commons/5/54/Ellywa-Balearica_regulorum.jpg"
+    },
+    {
+      "id": 3,
+      "view": "Рыбы",
+      "picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Fish-coll002.jpg/1024px-Fish-coll002.jpg"
+    },
+    {
+      "id": 4,
+      "view": "Моллюски",
+      "picture": "https://upload.wikimedia.org/wikipedia/commons/9/98/Mollusk_collage.jpg"
+    }
+  ]
+}

@@ -1,36 +1,27 @@
 "use strcit";
-const btn = document.querySelector(".btn");
-const body = document.querySelector("body");
-const getTask = () => {
-  const promise = axios.get(
-    `https://repetitora.net/api/JS/Tasks?widgetId=12349`
-  );
-  console.log(
-    promise.then((arr) => {
-      console.log(arr.data);
-    })
-  );
-};
-btn.addEventListener("click", () => {
-  getTask();
+window.addEventListener("DOMContentLoaded", () => {
+  const req = () => {
+    let request = new XMLHttpRequest();
+    request.open("GET", "http://localhost:3000/animals");
+    request.send();
+    request.addEventListener("load", () => {
+      if (request.readyState === 4 && request.status === 200) {
+        let data = JSON.parse(request.response);
+        getCards(data);
+      } else {
+        console.error("Что-то пошло не так");
+      }
+    });
+  };
+  const getCards = (dataCards) => {
+    dataCards.forEach((dataCard) => {
+      const card = document.createElement("div");
+      card.classList.add("card");
+      card.innerHTML = `
+                        <p class="animals__view">${dataCard.view}</p>
+                        <img src=${dataCard.picture} class='animals__image'>`;
+      document.querySelector(".app").append(card);
+    });
+  };
+  req();
 });
-
-// const getDataTasks = (tasks) => {
-//   tasks.forEach((task) => {
-//     const li = document.createElement("li");
-//     li.innerHTML = task.title;
-//     body.append(li);
-//   });
-// };
-// const createTask = (title) => {
-//   const promise = axios.post(
-//     `https://repetitora.net/api/JS/Tasks?widgetId=12349&title=${title}`
-//   );
-//   return promise.then((data) => {
-//     console.log(data);
-//   });
-// };
-// createTask("learn Js").then(() => {
-//   debugger;
-//   console.log(data);
-// });
