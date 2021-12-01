@@ -23,5 +23,6 @@ window.addEventListener("DOMContentLoaded", () => {
       document.querySelector(".app").append(card);
     });
   };
-  req();
+  const btn = document.querySelector(".btn");
+  btn.addEventListener("click", req);
 });
