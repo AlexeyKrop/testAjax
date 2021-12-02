@@ -1,0 +1,10 @@
+.app {
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.animals__image {
+  width: 700px;
+}
