@@ -1,10 +1,36 @@
-.app {
-  margin: 0 auto;
+* {
+  box-sizing: border-box;
+}
+body {
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+.form {
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  min-height: 170px;
+  flex: 0 1 250px;
 }
-.animals__image {
-  width: 700px;
+input {
+  width: 100%;
+  min-height: 34px;
+  padding: 10px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px 5px grey;
+}
+.button {
+  width: 100%;
+  background: #b0c4de;
+  outline: none;
+  border: none;
+  min-height: 34px;
+  box-shadow: 5px 5px 5px 5px grey;
+  border-radius: 5px;
+  cursor: pointer;
 }
