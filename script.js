@@ -4,20 +4,18 @@ const sendForm = () => {
   const sendData = (data) => {
     return fetch("https://jsonplaceholder.typicode.com/posts", {
       method: "POST",
-      body: data,
+      body: JSON.stringify(data),
       headers: {
-        "Content-Type": "multipart/form-data",
+        ContentType: "application/json",
       },
-    })
-      .then((res) => res.json())
-      .then((res) => console.log(res));
+    });
   };
   form.addEventListener("submit", (e) => {
     e.preventDefault();
     const formData = new FormData(form);
-    sendData(formData).then((data) => {
-      console.log(data);
-    });
+    const obj = {};
+    formData.forEach((value, key) => (obj[key] = value));
+    sendData(obj);
   });
 };
 sendForm();
