@@ -4,6 +4,11 @@ const renderImage = (btn) => {
     getImagesFromServer().then(getData);
   });
 };
+const renderTasks = (btn) => {
+  btn.addEventListener("click", () => {
+    createTasks("learn js");
+  });
+};
 
 const getData = (data) => {
   data.forEach((element) => {
@@ -13,3 +18,4 @@ const getData = (data) => {
   });
 };
 renderImage(document.querySelector("#btn"));
+renderTasks(document.querySelector("#task"));
