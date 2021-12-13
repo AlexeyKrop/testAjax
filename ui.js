@@ -1,21 +1,29 @@
 "use strcit";
-const renderImage = (btn) => {
-  btn.addEventListener("click", () => {
-    getImagesFromServer().then(getData);
-  });
-};
+// const renderImage = (btn) => {
+//   btn.addEventListener("click", () => {
+//     getImagesFromServer().then(getData);
+//   });
+// };
 const renderTasks = (btn) => {
   btn.addEventListener("click", () => {
-    createTasks("learn js");
+    getTasksFromServer().then(getTask);
   });
 };
-
-const getData = (data) => {
+// const getData = (data) => {
+//   data.forEach((element) => {
+//     const img = document.createElement("img");
+//     img.src = element.original;
+//     document.querySelector("body").append(img);
+//   });
+// };
+const getTask = (data) => {
   data.forEach((element) => {
-    const img = document.createElement("img");
-    img.src = element.original;
-    document.querySelector("body").append(img);
+    const li = document.createElement("li");
+    console.dir(li);
+    li.textContent = "";
+    li.innerHTML = element.title;
+    document.querySelector("#task-list").append(li);
   });
 };
-renderImage(document.querySelector("#btn"));
+createTask("learn JS");
 renderTasks(document.querySelector("#task"));
