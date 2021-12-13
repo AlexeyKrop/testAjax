@@ -4,16 +4,24 @@
 //     return data.json();
 //   });
 // };
-const createTask = (title) => {
+// const createTask = (title) => {
+//   return fetch(
+//     `https://repetitora.net/api/JS/Tasks?widgetId=2525&title=${title}`,
+//     {
+//       method: "POST",
+//     }
+//   );
+// };
+const createTask = (id) => {
   return fetch(
-    `https://repetitora.net/api/JS/Tasks?widgetId=1257&title=${title}`,
+    `https://repetitora.net/api/JS/Tasks?widgetId=2525&taskId=${id}`,
     {
-      method: "POST",
+      method: "DELETE",
     }
   );
 };
 const getTasksFromServer = () => {
-  return fetch("https://repetitora.net/api/JS/Tasks?widgetId=1257").then(
+  return fetch("https://repetitora.net/api/JS/Tasks?widgetId=2525").then(
     (data) => {
       return data.json();
     }

@@ -4,11 +4,10 @@
 //     getImagesFromServer().then(getData);
 //   });
 // };
-const renderTasks = (btn) => {
-  btn.addEventListener("click", () => {
-    getTasksFromServer().then(getTask);
-  });
-};
+const btn = document.querySelector("#task");
+btn.addEventListener("click", () => {
+  getTasksFromServer().then(getTask);
+});
 // const getData = (data) => {
 //   data.forEach((element) => {
 //     const img = document.createElement("img");
@@ -17,12 +16,15 @@ const renderTasks = (btn) => {
 //   });
 // };
 const getTask = (data) => {
+  // document.querySelector("#task-list").innerHTML = "";
   data.forEach((element) => {
     const li = document.createElement("li");
     li.innerHTML = element.title;
     document.querySelector("#task-list").append(li);
   });
 };
-createTask("learn JS");
+debugger;
+createTask("2ad59d33-3e89-4214-9f09-ab5f2bc2183d");
+
 // renderImage(document.querySelector("#btn"));
-renderTasks(document.querySelector("#task"));
+// renderTasks(document.querySelector("#task"));
