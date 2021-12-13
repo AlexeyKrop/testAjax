@@ -19,11 +19,10 @@ const renderTasks = (btn) => {
 const getTask = (data) => {
   data.forEach((element) => {
     const li = document.createElement("li");
-    console.dir(li);
-    li.textContent = "";
     li.innerHTML = element.title;
     document.querySelector("#task-list").append(li);
   });
 };
 createTask("learn JS");
+// renderImage(document.querySelector("#btn"));
 renderTasks(document.querySelector("#task"));
